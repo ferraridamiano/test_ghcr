@@ -3,7 +3,8 @@ name: "Build & deploy"
 on:
   push
 
-build_docker:
+jobs:
+  build_docker:
     runs-on: ubuntu-latest
     env:
       REGISTRY: ghcr.io
