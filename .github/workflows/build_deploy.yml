@@ -51,7 +51,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          provenance: false
+          provenance: true  # Enable built-in provenance
+          sbom: true       # Optionally also generate SBOM
+          attestations: |
+            provenance.slsa
+
 
 #      - name: Generate artifact attestation
 #        uses: actions/attest-build-provenance@v1
